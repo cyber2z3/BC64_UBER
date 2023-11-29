@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CodePro.vn - CyberSoft.edu.vn</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <!--===============================================================================================-->
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!--===============================================================================================-->
+  </head>
+
+  <body>
+    <div class="container-contact100">
+      <div
+        class="contact100-map"
+        id="google_map"
+        data-map-x="40.722047"
+        data-map-y="-73.986422"
+        data-pin="images/icons/map-marker.png"
+        data-scrollwhell="0"
+        data-draggable="1"
+      ></div>
+
+      <div class="contact100-more">
+        <i class="zmdi zmdi-phone-in-talk"></i>
+        (+84) 961.05.10.14
+      </div>
+
+      <div class="wrap-contact100">
+        <div>
+          <img
+            src="images/cybersoft.png"
+            alt="Front End CyberSoft"
+            width="40%"
+          />
+          <span style="padding: 20px"></span>
+          <img src="images/codepro.png" alt="Front End CyberSoft" width="30%" />
+
+          <div style="clear: both"></div>
+          <span class="contact100-form-title"> TÍNH CƯỚC UBER </span>
+          <h2>Vui lòng chọn loại xe:</h2>
+          <ul>
+            <li class="type">
+              <input type="radio" id="uberX" value="uberCar" name="selector" />
+              <label for="uberX">Uber Car</label>
+
+              <div class="check"></div>
+            </li>
+
+            <li class="type">
+              <input
+                type="radio"
+                id="uberSUV"
+                value="uberSUV"
+                name="selector"
+              />
+              <label for="uberSUV">Uber SUV</label>
+              <div class="check"></div>
+            </li>
+
+            <li class="type">
+              <input
+                type="radio"
+                id="uberBlack"
+                value="uberBlack"
+                name="selector"
+              />
+              <label for="uberBlack">Uber Black</label>
+              <div class="check"></div>
+            </li>
+          </ul>
+        </div>
+        <div style="clear: both"></div>
+
+        <form class="contact100-form">
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Name is required"
+          >
+            <h2>Nhập vào số KM</h2>
+            <input
+              class="input100"
+              type="text"
+              name="name"
+              id="txt-km"
+              placeholder="Số KM ..."
+            />
+            <span class="focus-input100"></span>
+          </div>
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Name is required"
+          >
+            <h2>Nhập thời gian chờ</h2>
+            <input
+              class="input100"
+              type="text"
+              id="txt-thoiGianCho"
+              name="name"
+              placeholder="Thời gian chờ  ..."
+            />
+            <span class="focus-input100"></span>
+          </div>
+
+          <div class="wrap-contact100-form-btn">
+            <div class="contact100-form-bgbtn"></div>
+            <button type="button" class="contact100-form-btn" id="btn-tinhTien">
+              TÍNH TIỀN
+            </button>
+          </div>
+
+          <div class="wrap-contact100-form-btn">
+            <div class="contact100-form-bgbtn"></div>
+            <button
+              type="button"
+              class="contact100-form-btn"
+              data-toggle="modal"
+              data-target="#exampleModal"
+              id="btn-inHoaDon"
+            >
+              IN HÓA ĐƠN
+            </button>
+          </div>
+        </form>
+
+        <div style="clear: both"></div>
+        <div id="divThanhTien" class="dongia">
+          <h2>
+            Thành tiền: <span id="xuatTien" class="xuatTien">0.0 vnđ </span>
+          </h2>
+        </div>
+
+        <div style="clear: both"></div>
+        <div id="hoaDon" class="inHoaDon pt-3">
+          <table class="table">
+            <thead class="theader">
+              <tr scope="col"><th>Chi tiết Hóa đơn</th></tr>
+              <tr>
+                <th scope="col">THEO KM</th>
+                <th scope="col">SỬ DỤNG</th>
+                <th scope="col">ĐƠN GIÁ (1000đ)</th>
+                <th scope="col">THÀNH TIỀN (1000đ)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">KM ĐẦU TIÊN</th>
+                <td id="sdChang1"></td>
+                <td id="dg1"></td>
+                <td id="thanhTienChang1"></td>
+              </tr>
+              <tr>
+                <th scope="row">TỪ 1 ĐẾN 19KM</th>
+                <td id="sdChang2"></td>
+                <td id="dg2"></td>
+                <td id="thanhTienChang2"></td>
+              </tr>
+              <tr>
+                <th scope="row">HƠN 19KM</th>
+                <td id="sdChang3"></td>
+                <td id="dg3"></td>
+                <td id="thanhTienChang3"></td>
+              </tr>
+              <tr>
+                <th scope="row">THỜI GIAN CHỜ</th>
+                <td id="sdCho"></td>
+                <td id="dgCho"></td>
+                <td id="thanhTienCho"></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="col">Tổng tiền: <span id="tongTien">0</span></th>
+              </tr>
+            </tfoot>
+          </table>
+  
+        </div>
+      </div>
+
+
+
+      <div style="clear: both"></div>
+    </div>
+    </div>
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+    <script src="js/map-custom.js"></script>
+    <!--===============================================================================================-->
+    <script src="./index.js"></script>
+  </body>
+</html>
